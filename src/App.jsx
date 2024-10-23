@@ -17,9 +17,9 @@ function App() {
   return (
     <>
     <h1> Aario (Ai ChatBot) </h1>
-      <textarea id='textside' value={question} onChange={(e) => setquestion(e.target.value)} cols = "30" rows = "10"> Type Question </textarea>
+      <textarea className='textside' value={question} onChange={(e) => setquestion(e.target.value)} cols = "30" rows = "10"> Type Question </textarea>
       <h2>  </h2>
-      <button onClick={APICall}>Generate</button>
+      <button className='generatebutton' onClick={APICall}>Generate</button>
       <p> {answer} </p>
     </>
   );

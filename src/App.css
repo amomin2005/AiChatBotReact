@@ -4,4 +4,8 @@
     text-align: center;
 }
 
-
+.generatebutton{
+    background-color: rgb(157, 217, 253);
+    border-style: none;
+    border-radius: 5%;
+}
