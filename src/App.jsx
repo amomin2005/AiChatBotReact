@@ -1,35 +1,28 @@
+import axios from 'axios';
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [question, setquestion] = useState("");
+  const [answer, setanswer] = useState("");
 
+  async function APICall(){
+    const response = await axios({
+      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyALreEffrbW8UC_b0Q5ntUNjivH3CDF0d0",
+      method: "post",
+      data : {"contents":[{"parts":[{"text":question}]}]}
+    });
+    console.log(setanswer(response['data']['candidates'][0]['content']['parts'][0]['text']));
+}
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <h1> Aario (Ai ChatBot) </h1>
+      <textarea id='textside' value={question} onChange={(e) => setquestion(e.target.value)} cols = "30" rows = "10"> Type Question </textarea>
+      <h2>  </h2>
+      <button onClick={APICall}>Generate</button>
+      <p> {answer} </p>
     </>
-  )
+  );
 }
 
 export default App
