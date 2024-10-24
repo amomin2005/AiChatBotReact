@@ -1,11 +1,41 @@
 *{
-    background-color: rgb(179, 183, 228);
-    margin: center;
-    text-align: center;
+    background-color: rgb(59, 63, 101);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .generatebutton{
-    background-color: rgb(157, 217, 253);
+    opacity: 0.5;
+    transition: opacity 300ms;
+    background-color: rgb(113, 137, 207);
+    font-size: 15px;
+    padding: 10px;
     border-style: none;
     border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generatebutton:hover{
+    opacity: 1;
+}
+
+.textside{
+    opacity: 0.5;
+    transition: opacity 300ms;
+    background-color: rgb(118, 120, 149);
+}
+
+.textside:hover{
+    opacity: 1;
+}
+
+.aianswer{
+    background-color: rgb(118, 120, 149);
+}
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
