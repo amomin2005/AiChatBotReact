@@ -16,13 +16,14 @@ function App() {
 }
   return (
     <>
-    <body className='middle'>
-    <h1> Aario (Ai ChatBot) </h1>
+    <body>
+      <div className='div1'>
+      <h1> Aario (Ai ChatBot) </h1>
       <textarea className='textside' value={question} onChange={(e) => setquestion(e.target.value)} cols = "30" rows = "10"> Type Question </textarea>
-      <h2>  </h2>
       <button className='generatebutton' onClick={APICall}>Search</button>
       <p className='aianswer' > {answer} </p>
-      </body>
+      </div>
+    </body>
     </>
   );
 }
